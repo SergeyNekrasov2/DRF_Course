@@ -1,0 +1,16 @@
+django==5.1.8
+dotenv==0.9.9
+psycopg2==2.9.10
+celery==5.4.0
+pillow==11.1.0
+djangorestframework==3.15.2
+django-filter==25.1
+drf-yasg==1.21.10
+requests==2.32.4
+djangorestframework-simplejwt==5.5.0
+django-cors-headers==4.7.0
+coverage==7.7.0
+redis==5.2.1
+django-celery-beat==2.7.0
+shell==1.0.1
+gunicorn==23.0.0
