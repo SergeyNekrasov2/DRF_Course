@@ -15,19 +15,19 @@ class Habit(models.Model):
         default="",
     )
     place = models.CharField(max_length=255, verbose_name="Место")
-    time = models.TimeField(verbose_name="Время")
+    habit_time = models.DateTimeField(verbose_name="Время")
     action = models.CharField(max_length=255, verbose_name="Действие")
-    is_pleasant = models.BooleanField(default=False, verbose_name="Приятная привычка")
-    linked_habit = models.ForeignKey(
+    is_nice = models.BooleanField(default=False, verbose_name="Приятная привычка")
+    associated_habit = models.ForeignKey(
         "self",
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name="linked_to",
+        related_name="associated_to",
         verbose_name="Связанная привычка",
     )
-    frequency = models.PositiveIntegerField(default=1, verbose_name="Периодичность (в днях)")
-    reward = models.CharField(max_length=255, blank=True, null=True, verbose_name="Вознаграждение")
+    period = models.PositiveIntegerField(default=1, verbose_name="Периодичность (в днях)")
+    award = models.CharField(max_length=255, blank=True, null=True, verbose_name="Вознаграждение")
     duration = models.PositiveIntegerField(verbose_name="Время на выполнение (в минутах)")
     is_public = models.BooleanField(default=False, verbose_name="Признак публичности")
 
@@ -36,4 +36,4 @@ class Habit(models.Model):
         verbose_name_plural = "Привычки"
 
     def __str__(self):
-        return f"{self.user.username}: {self.action} в {self.time} ({'Приятная' if self.is_pleasant else 'Полезная'})"
+        return f"{self.user.username}: {self.action} в {self.habit_time} ({'Приятная' if self.is_nice else 'Полезная'})"
