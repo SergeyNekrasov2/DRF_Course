@@ -33,7 +33,7 @@ class HabitTestCase(APITestCase):
         data = response.json()
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(data.get("frequency"), self.habit.frequency)
+        self.assertEqual(data.get("period"), self.habit.period)
 
     def test_habit_list(self):
         url = reverse("habit_tracker:habits_tracker")
@@ -56,7 +56,7 @@ class HabitTestCase(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(updated_habit.place, "на улице")
-        self.assertEqual(updated_habit.is_pleasant, True)
+        self.assertEqual(updated_habit.is_nice, True)
         self.assertEqual(updated_habit.duration, 5)
 
     def test_habit_delete(self):
