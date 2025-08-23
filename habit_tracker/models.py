@@ -15,7 +15,7 @@ class Habit(models.Model):
         default="",
     )
     place = models.CharField(max_length=255, verbose_name="Место")
-    habit_time = models.DateTimeField(verbose_name="Время")
+    habit_time = models.DateTimeField(verbose_name="Время", null=True)
     action = models.CharField(max_length=255, verbose_name="Действие")
     is_nice = models.BooleanField(default=False, verbose_name="Приятная привычка")
     associated_habit = models.ForeignKey(
