@@ -14,11 +14,11 @@ class HabitTestCase(APITestCase):
         self.habit = Habit.objects.create(
             user=self.user,
             place="дома",
-            time="14:31:00",
+            habit_time="14:31:00",
             action="Сделать 50 отжиманий",
-            is_pleasant=False,
-            frequency=1,
-            reward=None,
+            is_nice=False,
+            period=1,
+            award=None,
             duration=2,
             is_public=True,
         )
@@ -46,9 +46,9 @@ class HabitTestCase(APITestCase):
             "place": "на улице",
             "time": "16:32:00",
             "action": "Бегать 3 км",
-            "is_pleasant": True,
-            "frequency": 2,
-            "reward": "Фрукт",
+            "is_nice": True,
+            "period": 2,
+            "award": "Фрукт",
             "duration": 5,
         }
         response = self.client.patch(url, data, format="json")
