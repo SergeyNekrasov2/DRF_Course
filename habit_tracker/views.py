@@ -44,7 +44,7 @@ class HabitCreateAPIView(CreateAPIView):
     def perform_create(self, serializer):
 
         habit = serializer.save(user=self.request.user)
-        habit.user = self.request.user
+        habit.save(user=self.request.user)
         habit = serializer.save()
         habit.save()
         if habit.user.tg_chat_id:

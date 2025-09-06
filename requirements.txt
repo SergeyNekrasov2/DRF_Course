@@ -14,3 +14,4 @@ redis==5.2.1
 django-celery-beat==2.7.0
 shell==1.0.1
 gunicorn==23.0.0
+tzdata==2025.2
