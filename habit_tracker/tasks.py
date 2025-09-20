@@ -28,9 +28,9 @@ def telegram_message():
             habit_time_str = f"{habit_time:%H:%M}"
 
             if habit.is_nice:
-                message = f"Ты получил {habit.action} в {habit_time_str} {habit.location}"
+                message = f"Ты получил {habit.action} в {habit_time_str} {habit.place}"
             else:
-                message = f"Напоминание: {habit.action} в {habit_time_str} {habit.location}"
+                message = f"Напоминание: {habit.action} в {habit_time_str} {habit.place}"
 
             send_telegram_message(user_tg, message)
 

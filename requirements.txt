@@ -1,6 +1,6 @@
 django==5.1.8
 dotenv==0.9.9
-psycopg2==2.9.10
+psycopg2-binary==2.9.10
 celery==5.4.0
 pillow==11.1.0
 djangorestframework==3.15.2
@@ -14,3 +14,4 @@ redis==5.2.1
 django-celery-beat==2.7.0
 shell==1.0.1
 gunicorn==23.0.0
+tzdata==2025.2
